@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test --code-coverage",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless"
+    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run --record false"
   },
   "private": true,
   "dependencies": {
