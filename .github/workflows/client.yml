@@ -18,15 +18,21 @@ jobs:
           node-version: '16'
 
       - name: Cache dependencies
-        id: cache
         uses: actions/cache@v3
         with:
-          path: ./client/node_modules
-          key: modules-${{ hashFiles('./client/package-lock.json') }}
+            path: ~/.npm
+            key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+            restore-keys: ${{runner.os}}-npm-
           
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts
+        run: npm ci
 
       - name: Run unit tests
         run: npm run test:headless
+
+      - name: Run e2e tests
+        uses: cypress-io/github-action@v3
+        with:
+          working-directory: ./client
+          start: npm start
+          wait-on: http://localhost:4200
