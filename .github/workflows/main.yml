@@ -1,4 +1,4 @@
-name: Client
+name: Main
 
 on: ['push', 'pull_request']
 
@@ -26,10 +26,19 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
-
+        
       - name: Run unit tests
         run: npm run test:headless
 
+      - name: Setup Web API
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.0.x'
+  
+      - name: Run Web API
+        run: dotnet run --project **/AngularDotnetGHActions.API.csproj &
+        working-directory: ./api
+        
       - name: Run e2e tests
         uses: cypress-io/github-action@v3
         with:
