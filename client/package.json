@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "prebuild": "npm version patch --no-git-tag-version",
+    "build": "ng build -c production --progress false",
+    "start:build": "http-server ./dist/angular-dotnet-gh-actions -p 4200 -s",
     "test": "ng test --code-coverage",
-    "test:headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "test:headless": "ng test --watch false --browsers ChromeHeadless --progress false --code-coverage",
     "cy:open": "cypress open",
     "cy:run": "cypress run --record false"
   },
