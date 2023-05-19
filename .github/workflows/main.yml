@@ -26,6 +26,9 @@ jobs:
           
       - name: Install dependencies
         run: npm ci
+
+      - name: Check code quality
+        run: npm run lint
         
       - name: Run unit tests
         run: npm run test:headless
