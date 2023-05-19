@@ -11,7 +11,7 @@
     "test": "ng test --code-coverage",
     "test:headless": "ng test --watch false --browsers ChromeHeadless --progress false --code-coverage",
     "cy:open": "cypress open",
-    "cy:run": "cypress run --record false"
+    "cy:run": "cypress run"
   },
   "private": true,
   "dependencies": {
