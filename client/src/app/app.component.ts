@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { environment as env } from '@env';
 
 @Component({
     selector: 'app-root',
@@ -9,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
     constructor(private http: HttpClient) { }
 
+    private readonly baseUrl = env.baseUrl;
     forecast: any;
 
     ngOnInit(): void {
