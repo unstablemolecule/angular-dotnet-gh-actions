@@ -486,7 +486,8 @@ api/**/*.lnk
 client/dist
 client/tmp
 clientclient/out-tsc
-/bazel-out
+client/bazel-out
+client/**/environment.deploy.ts
 
 # Node
 client/node_modules
