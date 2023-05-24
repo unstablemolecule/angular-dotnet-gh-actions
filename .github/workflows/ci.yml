@@ -51,7 +51,7 @@ jobs:
         uses: cypress-io/github-action@v3
         with:
           working-directory: ./client
-          build: npm run build --ignore-scripts
+          build: npm run build:prod
           start: npm run start:build
           config: video=false,screenshotOnRunFailure=false
           wait-on: http://localhost:4200
