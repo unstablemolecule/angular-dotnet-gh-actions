@@ -487,7 +487,6 @@ client/dist
 client/tmp
 clientclient/out-tsc
 client/bazel-out
-client/**/environment.deploy.ts
 
 # Node
 client/node_modules
