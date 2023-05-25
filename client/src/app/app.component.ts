@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     }
 
     getWeatherForecast() {
-        this.http.get('http://localhost:5000/api/WeatherForecast')
+        this.http.get(`${this.baseUrl}/weatherforecast`)
             .subscribe(forecast => this.forecast = forecast);
     }
 

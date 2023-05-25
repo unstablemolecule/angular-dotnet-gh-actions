@@ -4,7 +4,7 @@ describe('template spec', () => {
     });
 
     it('should have forecast pre block', () => {
-        cy.intercept('GET', `${Cypress.env('apiUrl')}/WeatherForecast`).as('getWeatherForecast');
+        cy.intercept('GET', `${Cypress.env('apiUrl')}/weatherforecast`).as('getWeatherForecast');
         cy.visit('/');
         cy.wait('@getWeatherForecast').then(() => {
             cy.get(`[data-cy="forecast"]`)
