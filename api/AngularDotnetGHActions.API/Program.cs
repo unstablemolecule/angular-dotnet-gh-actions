@@ -19,7 +19,8 @@ public class Program
             options.AddDefaultPolicy(policy =>
             {
                 policy.WithOrigins(
-                    "http://localhost:4200"
+                    "http://localhost:4200",
+                    "https://brave-desert-0c3be1f10.3.azurestaticapps.net"
                 );
             });
         });
