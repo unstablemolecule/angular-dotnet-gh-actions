@@ -38,12 +38,12 @@ jobs:
       - name: Run unit tests
         run: npm run test:headless
 
-      - name: Setup Web API
+      - name: Set up web API
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
   
-      - name: Run Web API
+      - name: Run web API
         run: dotnet run --project **/AngularDotnetGHActions.API.csproj &
         working-directory: ./api
         

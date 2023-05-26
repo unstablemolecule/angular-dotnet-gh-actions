@@ -12,7 +12,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Deploy
+      - name: Set up web API
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Build API
+        run: dotnet publish -c Release -o ./release
+        working-directory: ./api
+
+      - name: Deploy web API
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: "AngularDotnetGHActions"
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          package: ./api/release
+
+      - name: Deploy client
         uses: azure/static-web-apps-deploy@v1
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
