@@ -1,9 +1,10 @@
-name: CD
+name: API CD
 
 on:
   push:
     branches:
       - main
+    paths: api/**
 
 jobs:
   deploy:
@@ -27,13 +28,3 @@ jobs:
           app-name: "AngularDotnetGHActions"
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ./api/release
-
-      - name: Deploy client
-        uses: azure/static-web-apps-deploy@v1
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          app_location: "client"
-          app_build_command: npm run build --ignore-scripts
-          output_location: "dist"
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "upload"
