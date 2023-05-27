@@ -3,8 +3,8 @@ name: Client CD
 on:
   push:
     branches:
-      - main
-    paths: client/**
+      - "main"
+    paths: "client/**"
 
 jobs:
   deploy:

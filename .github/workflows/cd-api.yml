@@ -3,8 +3,8 @@ name: API CD
 on:
   push:
     branches:
-      - main
-    paths: api/**
+      - "main"
+    paths: "api/**"
 
 jobs:
   deploy:
