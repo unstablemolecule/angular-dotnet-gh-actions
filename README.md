@@ -1,6 +1,6 @@
 # Angular .NET Core GitHub Actions
 
-[![CI](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/ci.yml/badge.svg)](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/ci.yml) [![Client CD](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/cd-client.yml/badge.svg)](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/cd-client.yml) [![API CD](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/cd-api.yml/badge.svg)](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/cd-api.yml)
+[![CI](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/ci.yml/badge.svg)](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/ci.yml) [![CD](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/cd.yml/badge.svg)](https://github.com/unstablemolecule/angular-dotnet-gh-actions/actions/workflows/cd.yml)
 
 Sample project playground for testing the implementation of a CI/CD pipeline using GitHub Actions. It should cover the following processes for both the client and the web API:
 
