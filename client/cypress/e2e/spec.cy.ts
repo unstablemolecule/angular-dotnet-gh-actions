@@ -8,7 +8,7 @@ describe('template spec', () => {
         cy.visit('/');
         cy.wait('@getWeatherForecast').then(() => {
             cy.get(`[data-cy="forecast"]`)
-                .should('not.be.empty');
+                .should('exist');
         });
     });
 })

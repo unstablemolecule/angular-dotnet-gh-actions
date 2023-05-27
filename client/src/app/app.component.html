@@ -185,6 +185,14 @@
 
 </div>
 
-<pre data-cy="forecast">{{ forecast | json }}</pre>
+<div
+    *ngFor="let f of forecast"
+    class="forecast"
+    data-cy="forecast">
+    <div>{{f.date | date: 'mediumDate'}}</div>
+    <div>{{f.temperatureC}}</div>
+    <div>{{f.temperatureF}}</div>
+    <div>{{f.summary}}</div>
+</div>
 
 <router-outlet></router-outlet>
