@@ -5,7 +5,13 @@ on:
     branches:
       - "*"
       - "!main"
+    paths:
+      - api/**
+      - client/**
   pull_request:
+    paths:
+      - api/**
+      - client/**
 
 jobs:
   tests:
