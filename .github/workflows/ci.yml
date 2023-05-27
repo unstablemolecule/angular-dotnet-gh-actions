@@ -6,12 +6,12 @@ on:
       - "*"
       - "!main"
     paths:
-      - api/**
-      - client/**
+      - "api/**"
+      - "client/**"
   pull_request:
     paths:
-      - api/**
-      - client/**
+      - "api/**"
+      - "client/**"
 
 jobs:
   tests:
