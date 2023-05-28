@@ -46,7 +46,7 @@ For building the web API, run `dotnet publish -c Release` in the `api/` director
 
 A CI/CD pipeline is configured to allow for continuously testing the code every time a significant push is made to all branches expect `main`. This branch is protected and pull requests are required for every intended change. Branches that are used for PRs must be up-to-date and pass the `tests` check before being eligible to be merged into the main branch.
 
-Once a release is ready to be published, create a new branch and run `npm run version -- <version-type>` in the `client/` directory to update the json package files. Commit the changes, push the new branch and open a new PR. Once the checks have passed and the main branch is updated, create a new tag by running `git tag v<newversion>` followed by `git push -u origin v<newversion>` to upload to the repository.
+Once a release is ready to be published, create a new branch and run `npm run release -- <version-type>` in the `client/` directory to update the json package files. Commit the changes, push the new branch and open a new PR. Once the checks have passed and the main branch is updated, create a new tag by running `git tag v<newversion>` followed by `git push -u origin v<newversion>` to upload to the repository.
 
 Head over to GitHub and create a new release. Select the newly created tag and name the release after it. Write any necessary text under the description box and click on the *Publish release* option. Once the release has been published, the deployment workflow will trigger and the release artifacts for both the web API and the client app will be built and uploaded to Azure.
 
