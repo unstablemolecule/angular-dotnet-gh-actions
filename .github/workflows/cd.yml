@@ -29,6 +29,7 @@ jobs:
           package: ./api/release
 
   deploy-client:
+    name: Deploy client
     needs: deploy-api
     runs-on: ubuntu-latest
     steps:
